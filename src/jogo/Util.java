@@ -75,7 +75,7 @@ public class Util {
 				for (int j = 0; j < 3; j++) {
 					System.out.print(tabuleiro[i][j] + " ");
 				}
-				System.out.println("fim");
+				System.out.println();
 			}
 			System.out.println();
 			jogadas++;
@@ -139,7 +139,6 @@ public class Util {
 			System.out.println("Jogador Venceu");
 			vencedor = 1;
 		}
-		
 		return getCampo(posH, posV);
 	}
 

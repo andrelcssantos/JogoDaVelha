@@ -5,7 +5,9 @@
  */
 package jogo;
 
-public class JogoDaVelha extends javax.swing.JFrame {
+import javax.swing.JFrame;
+
+public class JogoDaVelha extends JFrame {
 
 	Util util = new Util();
 
@@ -25,8 +27,9 @@ public class JogoDaVelha extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
 
-		jSeparator1 = new javax.swing.JSeparator();
 		jPanel1 = new javax.swing.JPanel();
+		jPanel3 = new javax.swing.JPanel();
+		
 		btn1 = new javax.swing.JButton();
 		btn3 = new javax.swing.JButton();
 		btn2 = new javax.swing.JButton();
@@ -36,22 +39,25 @@ public class JogoDaVelha extends javax.swing.JFrame {
 		btn7 = new javax.swing.JButton();
 		btn9 = new javax.swing.JButton();
 		btn8 = new javax.swing.JButton();
+		btnNovoJogo = new javax.swing.JButton();
+		
 		jLabel1 = new javax.swing.JLabel();
-		jPanel3 = new javax.swing.JPanel();
 		jLabel2 = new javax.swing.JLabel();
 		jLabel3 = new javax.swing.JLabel();
 		jLabel4 = new javax.swing.JLabel();
 		jLabel6 = new javax.swing.JLabel();
-		jSeparator3 = new javax.swing.JSeparator();
 		jLabel7 = new javax.swing.JLabel();
 		jLabel9 = new javax.swing.JLabel();
-		lblVitoriaJogador1 = new javax.swing.JLabel();
-		lblEmpate = new javax.swing.JLabel();
-		lblVitoriaJogador2 = new javax.swing.JLabel();
 		jLabel15 = new javax.swing.JLabel();
-		btnNovoJogo = new javax.swing.JButton();
+		lblEmpate = new javax.swing.JLabel();
+		lblVitoriaJogador1 = new javax.swing.JLabel();
+		lblVitoriaJogador2 = new javax.swing.JLabel();
+		
+		jSeparator3 = new javax.swing.JSeparator();
+		
 		// btnSair = new javax.swing.JButton();
-		jogador = !util.vezJogadorX;
+		
+		
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setTitle("Jogo da Velha");
@@ -938,7 +944,6 @@ public class JogoDaVelha extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel9;
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JPanel jPanel3;
-	private javax.swing.JSeparator jSeparator1;
 	private javax.swing.JSeparator jSeparator3;
 	private javax.swing.JLabel lblEmpate;
 	private javax.swing.JLabel lblVitoriaJogador1;
