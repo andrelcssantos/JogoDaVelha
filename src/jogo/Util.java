@@ -3,8 +3,8 @@ package jogo;
 public class Util {
 
 	int[][] tabuleiro = new int[3][3];
-	boolean vezJogadorX;// = true;
-	boolean vezJogadorO;// = false;
+	boolean vezJogadorX;
+	boolean vezJogadorO;
 	int jogadas;
 	int vencedor = -1;
 
@@ -31,7 +31,8 @@ public class Util {
 		}
 		jogadas = 0;
 	}
-
+	
+	//verifica a vez do jogador na tela 
 	public void vezDoJogador() {
 		if (vezJogadorX == true) {
 			vezJogadorX = false;
@@ -42,6 +43,7 @@ public class Util {
 		}
 	}
 
+	
 	public int jogada() {
 		int posH;
 		int posV;
@@ -50,27 +52,26 @@ public class Util {
 				posH = (int) ((Math.random()*100) % 3);
 				posV = (int) ((Math.random()*100) % 3);
 			} while (tabuleiro[posH][posV] == 1 || tabuleiro[posH][posV] == 2);
-			tabuleiro[posH][posV] = 2;
-			if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
-					&& (tabuleiro[0][0] == 2)
-					|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
-					&& (tabuleiro[1][0] == 2)
-					|| (tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][1] == tabuleiro[2][2])
-					&& (tabuleiro[2][0] == 2)
-					|| (tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[1][0] == tabuleiro[2][0])
-					&& (tabuleiro[0][0] == 2)
-					|| (tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][1])
-					&& (tabuleiro[0][1] == 2)
-					|| (tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[1][2] == tabuleiro[2][2])
-					&& (tabuleiro[0][2] == 2)
-					|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
-					&& (tabuleiro[0][0] == 2)
-					|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
-					&& (tabuleiro[0][2] == 2)) {
-				System.out.println("Computador Venceu");
-				vencedor = 2;
+				tabuleiro[posH][posV] = 2;
+					if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
+							&& (tabuleiro[0][0] == 2)
+							|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
+							&& (tabuleiro[1][0] == 2)
+							|| (tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][1] == tabuleiro[2][2])
+							&& (tabuleiro[2][0] == 2)
+							|| (tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[1][0] == tabuleiro[2][0])
+							&& (tabuleiro[0][0] == 2)
+							|| (tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][1])
+							&& (tabuleiro[0][1] == 2)
+							|| (tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[1][2] == tabuleiro[2][2])
+							&& (tabuleiro[0][2] == 2)
+							|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
+							&& (tabuleiro[0][0] == 2)
+							|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
+							&& (tabuleiro[0][2] == 2)) {
+						System.out.println("Computador Venceu");
+						vencedor = 2;
 			}
-
 			for (int i = 0; i < 3; i++) {
 				for (int j = 0; j < 3; j++) {
 					System.out.print(tabuleiro[i][j] + " ");
@@ -119,7 +120,6 @@ public class Util {
 			jogada();
 		jogadas++;
 		
-
 		if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
 				&& (tabuleiro[0][0] == 1)
 				|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
