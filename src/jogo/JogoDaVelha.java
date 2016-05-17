@@ -603,7 +603,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(0, 0);
 			}
 			vencedor();
 		}
@@ -626,7 +627,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(0, 1);
 			}
 			vencedor();
 		}
@@ -649,7 +651,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(0, 2);
 			}
 			vencedor();
 		}
@@ -672,7 +675,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(1, 0);
 			}
 			vencedor();
 		}
@@ -695,7 +699,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(1, 1);
 			}
 			vencedor();
 		}
@@ -718,7 +723,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(1, 2);
 			}
 			vencedor();
 		}
@@ -741,7 +747,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(2, 0);
 			}
 			vencedor();
 		}
@@ -764,7 +771,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(2, 1);
 			}
 			vencedor();
 		}
@@ -787,7 +795,8 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-					jogada();
+//					jogada();
+					jogadaIA(2, 2);
 			}
 			vencedor();
 		}
@@ -825,6 +834,39 @@ public class JogoDaVelha extends JFrame {
 		}
 	}
 
+	//jogadaIA
+	private void jogadaIA(int xh, int xv) {
+		int btn = util.IA(xh, xv);
+		if (btn == 1){
+			btn1.setText("O");
+			btn1.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 2){
+			btn2.setText("O");
+			btn2.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 3){
+			btn3.setText("O");
+			btn3.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 4){
+			btn4.setText("O");
+			btn4.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 5){
+			btn5.setText("O");
+			btn5.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 6){
+			btn6.setText("O");
+			btn6.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 7){
+			btn7.setText("O");
+			btn7.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 8){
+			btn8.setText("O");
+			btn8.setForeground(new java.awt.Color(255, 0, 0));
+		}else if (btn == 9){
+			btn9.setText("O");
+			btn9.setForeground(new java.awt.Color(255, 0, 0));
+		}
+	}
+	
 	private void vencedor() {
 		if (util.vencedor == 1) {
 			lblVitoriaJogador1.setText(Integer.toString(++VitoriasJogador1));
@@ -851,6 +893,7 @@ public class JogoDaVelha extends JFrame {
 	}
 
 	private void btnNovoJogoActionPerformed(java.awt.event.ActionEvent evt) {
+//		util.random();
 		btn1.setText("");
 		btn2.setText("");
 		btn3.setText("");
