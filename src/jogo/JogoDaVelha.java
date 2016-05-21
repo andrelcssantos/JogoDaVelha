@@ -603,8 +603,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(0, 0);
+					jogada();
 			}
 			vencedor();
 		}
@@ -627,8 +626,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(0, 1);
+					jogada();
 			}
 			vencedor();
 		}
@@ -651,8 +649,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(0, 2);
+					jogada();
 			}
 			vencedor();
 		}
@@ -675,8 +672,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(1, 0);
+					jogada();
 			}
 			vencedor();
 		}
@@ -699,8 +695,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(1, 1);
+					jogada();
 			}
 			vencedor();
 		}
@@ -723,8 +718,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(1, 2);
+					jogada();
 			}
 			vencedor();
 		}
@@ -747,8 +741,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(2, 0);
+					jogada();
 			}
 			vencedor();
 		}
@@ -771,8 +764,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(2, 1);
+					jogada();
 			}
 			vencedor();
 		}
@@ -795,8 +787,7 @@ public class JogoDaVelha extends JFrame {
 				System.out.println();
 
 				if (util.jogadas < 9)
-//					jogada();
-					jogadaIA(2, 2);
+					jogada();
 			}
 			vencedor();
 		}
