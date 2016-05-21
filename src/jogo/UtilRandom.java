@@ -2,7 +2,7 @@ package jogo;
 
 import java.util.Random;
 
-public class Util {
+public class UtilRandom {
 
 	int[][] tabuleiro = new int[3][3];
 	boolean vezJogadorX;
@@ -10,7 +10,7 @@ public class Util {
 	int jogadas;
 	int vencedor = -1;
 
-	public Util() {
+	public UtilRandom() {
 		if((Math.random() % 2) == 0) {
 			vezJogadorX = false;
 			vezJogadorO = true;
@@ -23,7 +23,7 @@ public class Util {
 			jogada();
 	}
 
-	public Util(boolean jogador) {
+	public UtilRandom(boolean jogador) {
 		if(jogador == true) {
 			vezJogadorX = false;
 			vezJogadorO = true;
@@ -63,7 +63,6 @@ public class Util {
 			do{
 				numero = gerador.nextInt(3);
 			}while(numero % 2 != 0);
-//	        System.out.println(numero);
 			return numero;
 		}
 
@@ -110,49 +109,7 @@ public class Util {
 		return -1;
 	}
 	
-	public int IA(int posXH, int posXV) {
-		int posH = 0;
-		int posV = 0;
-		if (jogadas < 9 && vencedor == -1) {
-			do {
-				if(tabuleiro[posXH][posXV] == 1){
-					posH = random();
-					posV = random();
-				}
-			} while (tabuleiro[posH][posV] == 1 || tabuleiro[posH][posV] == 2);
-				tabuleiro[posH][posV] = 2;
-					if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
-							&& (tabuleiro[0][0] == 2)
-							|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
-							&& (tabuleiro[1][0] == 2)
-							|| (tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][1] == tabuleiro[2][2])
-							&& (tabuleiro[2][0] == 2)
-							|| (tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[1][0] == tabuleiro[2][0])
-							&& (tabuleiro[0][0] == 2)
-							|| (tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][1])
-							&& (tabuleiro[0][1] == 2)
-							|| (tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[1][2] == tabuleiro[2][2])
-							&& (tabuleiro[0][2] == 2)
-							|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
-							&& (tabuleiro[0][0] == 2)
-							|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
-							&& (tabuleiro[0][2] == 2)) {
-						System.out.println("Computador Venceu");
-						vencedor = 2;
-			}
-			for (int i = 0; i < 3; i++) {
-				for (int j = 0; j < 3; j++) {
-					System.out.print(tabuleiro[i][j] + " ");
-				}
-				System.out.println();
-			}
-			System.out.println();
-			jogadas++;
-			vezDoJogador();
-			return posJogada(posH, posV);
-		}
-		return -1;
-	}
+
 	
 	private int posJogada(int posH, int posV) {
 		if(posH == 0 && posV == 0)
