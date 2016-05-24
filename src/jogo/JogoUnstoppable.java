@@ -171,7 +171,7 @@ public class JogoUnstoppable extends javax.swing.JFrame {
 
 		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 		jLabel1.setForeground(new java.awt.Color(20, 40, 189));
-		jLabel1.setText("Jogo da Velha");
+		jLabel1.setText("Unstoppable Mode");
 
 		jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
 				"Informações da Partida",

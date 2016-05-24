@@ -343,6 +343,46 @@ public class UtilUnstoppable {
 			tabuleiro[2][0] = 2;
 			return true;
 		}
+		if (tabuleiro[0][0] == 1 && tabuleiro[2][2] == 1){
+			tabuleiro[1][0] = 2;
+			return true;
+		}
+		if (tabuleiro[0][2] == 1 && tabuleiro[2][0] == 1){
+			tabuleiro[2][1] = 2;
+			return true;
+		}
+		if (tabuleiro[2][2] == 0 && tabuleiro[0][2] == 1 && tabuleiro[2][1] == 1){//ok
+			tabuleiro[2][2] = 2;
+			return true;
+		}
+		if (tabuleiro[0][2] == 0 && tabuleiro[0][0] == 1 && tabuleiro[1][2] == 1){//ok
+			tabuleiro[0][2] = 2;
+			return true;
+		}
+		if (tabuleiro[0][0] == 0 && tabuleiro[2][0] == 1 && tabuleiro[0][1] == 1){//ok
+			tabuleiro[0][0] = 2;
+			return true;
+		}
+		if (tabuleiro[2][0] == 0 && tabuleiro[2][2] == 1 && tabuleiro[1][0] == 1){//ok
+			tabuleiro[2][0] = 2;
+			return true;
+		}
+		if (tabuleiro[0][2] == 0 && tabuleiro[2][2] == 1 && tabuleiro[0][1] == 1){//ok
+			tabuleiro[0][2] = 2;
+			return true;
+		}
+		if (tabuleiro[2][0] == 0 && tabuleiro[0][0] == 1 && tabuleiro[2][1] == 1){//ok
+			tabuleiro[2][0] = 2;
+			return true;
+		}
+		if (tabuleiro[0][0] == 0 && tabuleiro[0][2] == 1 && tabuleiro[1][0] == 1){//ok
+			tabuleiro[0][0] = 2;
+			return true;
+		}
+		if (tabuleiro[2][2] == 0 && tabuleiro[2][0] == 1 && tabuleiro[1][2] == 1){//ok
+			tabuleiro[2][2] = 2;
+			return true;
+		}
 		return false;
 	}
 	
@@ -406,7 +446,7 @@ public class UtilUnstoppable {
 			}
 			else if(pos == 4) {
 				if(tabuleiro[2][1] == 0) {
-					tabuleiro[2][2] = 2;
+					tabuleiro[2][1] = 2;
 					p = true;
 				}
 			}
