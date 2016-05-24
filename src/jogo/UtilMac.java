@@ -1,7 +1,5 @@
 package jogo;
 
-import javax.print.attribute.standard.JobOriginatingUserName;
-
 public class UtilMac {
 
 	int[][] tabuleiro = new int[3][3];
@@ -105,46 +103,35 @@ public class UtilMac {
 	}
 
 	public int verificaVencedor() {
-		if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
-				&& (tabuleiro[0][0] == 2)
-				|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
-				&& (tabuleiro[1][0] == 2)
-				|| (tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][1] == tabuleiro[2][2])
-				&& (tabuleiro[2][0] == 2)
-				|| (tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[1][0] == tabuleiro[2][0])
-				&& (tabuleiro[0][0] == 2)
-				|| (tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][1])
-				&& (tabuleiro[0][1] == 2)
-				|| (tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[1][2] == tabuleiro[2][2])
-				&& (tabuleiro[0][2] == 2)
-				|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
-				&& (tabuleiro[0][0] == 2)
-				|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
-				&& (tabuleiro[0][2] == 2)) {
+		if (possibilidadesJog2()) {
 			jogador2++;
 			return 2;
 		}
-		if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
-				&& (tabuleiro[0][0] == 2)
-				|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
-				&& (tabuleiro[1][0] == 2)
-				|| (tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][1] == tabuleiro[2][2])
-				&& (tabuleiro[2][0] == 2)
-				|| (tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[1][0] == tabuleiro[2][0])
-				&& (tabuleiro[0][0] == 2)
-				|| (tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][1])
-				&& (tabuleiro[0][1] == 2)
-				|| (tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[1][2] == tabuleiro[2][2])
-				&& (tabuleiro[0][2] == 2)
-				|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
-				&& (tabuleiro[0][0] == 2)
-				|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
-				&& (tabuleiro[0][2] == 2)) {
+		if (possibilidadesJog2()) {
 			jogador1++;
 			return 1;
 		}
 		empate++;
 		return -1;
+	}
+
+	public boolean possibilidadesJog2() {
+		return (tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
+				&& (tabuleiro[0][0] == 2)
+				|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
+				&& (tabuleiro[1][0] == 2)
+				|| (tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][1] == tabuleiro[2][2])
+				&& (tabuleiro[2][0] == 2)
+				|| (tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[1][0] == tabuleiro[2][0])
+				&& (tabuleiro[0][0] == 2)
+				|| (tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][1])
+				&& (tabuleiro[0][1] == 2)
+				|| (tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[1][2] == tabuleiro[2][2])
+				&& (tabuleiro[0][2] == 2)
+				|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
+				&& (tabuleiro[0][0] == 2)
+				|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
+				&& (tabuleiro[0][2] == 2);
 	}
 
 	private boolean vence(int jogador) {
@@ -505,16 +492,13 @@ public class UtilMac {
 		} while (p == false);
 	}
 
+	
+	
 	@Override
 	public String toString() {
-
-		return "|" + tabuleiro[0][0] + "|" + tabuleiro[0][1] + "|"
-				+ tabuleiro[0][2] + "|\n|" + tabuleiro[1][0] + "|"
-				+ tabuleiro[1][1] + "|" + tabuleiro[1][2] + "|\n|"
-				+ tabuleiro[2][0] + "|" + tabuleiro[2][1] + "|"
-				+ tabuleiro[2][2] + "|\n";
+		return "UtilMac [jogador1=" + jogador1 + ", jogador2=" + jogador2 + ", empate=" + empate + "]";
 	}
-	
+
 	public static void main(String[] args){
 		boolean vezJogador = true;
 		for(int i = 0; i < 1000 ; i++){
@@ -522,7 +506,7 @@ public class UtilMac {
 			while(util.jogadas < 9 || util.vencedor != -1){
 				util.jogada();
 			}
-			System.out.println("Jogador 1 = " + util.jogador1 + " | " + " Jogador 2 = " + util.jogador2 + " | " + " Empate = " + util.empate);
+			System.out.println(util.toString());
 		}
 	}
 }
