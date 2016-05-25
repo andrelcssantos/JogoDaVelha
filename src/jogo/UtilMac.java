@@ -501,6 +501,7 @@ public class UtilMac {
 
 	public static void main(String[] args){
 		boolean vezJogador = true;
+		
 		for(int i = 0; i < 1000 ; i++){
 			UtilMac util = new UtilMac(vezJogador);
 			while(util.jogadas < 9 || util.vencedor != -1){
