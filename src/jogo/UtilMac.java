@@ -7,9 +7,6 @@ public class UtilMac {
 	boolean vezJogadorO;// = false;
 	int jogadas;
 	int vencedor = -1;
-	int jogador1;
-	int jogador2;
-	int empate;
 
 	public UtilMac() {
 		if ((Math.random() % 2) == 0) {
@@ -45,7 +42,7 @@ public class UtilMac {
 		}
 	}
 
-	public void jogada() {
+	public int[][] jogada() {
 		int jogador;
 		
 		if (vezJogadorX == true) { jogador = 1; } else { jogador = 2; }
@@ -66,6 +63,8 @@ public class UtilMac {
 		}
 		jogadas++;
 		vencedor = verificaVencedor();
+		System.out.println(toString());
+		return tabuleiro;
 	}
 
 	public int getCampo(int posH, int posV) {
@@ -103,20 +102,7 @@ public class UtilMac {
 	}
 
 	public int verificaVencedor() {
-		if (possibilidadesJog2()) {
-			jogador2++;
-			return 2;
-		}
-		if (possibilidadesJog2()) {
-			jogador1++;
-			return 1;
-		}
-		empate++;
-		return -1;
-	}
-
-	public boolean possibilidadesJog2() {
-		return (tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
+		if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
 				&& (tabuleiro[0][0] == 2)
 				|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
 				&& (tabuleiro[1][0] == 2)
@@ -131,7 +117,30 @@ public class UtilMac {
 				|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
 				&& (tabuleiro[0][0] == 2)
 				|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
-				&& (tabuleiro[0][2] == 2);
+				&& (tabuleiro[0][2] == 2)) {
+			System.out.println("Computador Venceu");
+			return 2;
+		}
+		if ((tabuleiro[0][0] == tabuleiro[0][1] && tabuleiro[0][1] == tabuleiro[0][2])
+				&& (tabuleiro[0][0] == 2)
+				|| (tabuleiro[1][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[1][2])
+				&& (tabuleiro[1][0] == 2)
+				|| (tabuleiro[2][0] == tabuleiro[2][1] && tabuleiro[2][1] == tabuleiro[2][2])
+				&& (tabuleiro[2][0] == 2)
+				|| (tabuleiro[0][0] == tabuleiro[1][0] && tabuleiro[1][0] == tabuleiro[2][0])
+				&& (tabuleiro[0][0] == 2)
+				|| (tabuleiro[0][1] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][1])
+				&& (tabuleiro[0][1] == 2)
+				|| (tabuleiro[0][2] == tabuleiro[1][2] && tabuleiro[1][2] == tabuleiro[2][2])
+				&& (tabuleiro[0][2] == 2)
+				|| (tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2])
+				&& (tabuleiro[0][0] == 2)
+				|| (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0])
+				&& (tabuleiro[0][2] == 2)) {
+			System.out.println("Jogador Venceu");
+			return 1;
+		}
+		return -1;
 	}
 
 	private boolean vence(int jogador) {
@@ -387,46 +396,6 @@ public class UtilMac {
 			tabuleiro[2][0] = jogador1;
 			return true;
 		}
-		if (tabuleiro[0][0] == jogador2 && tabuleiro[2][2] == jogador2){
-			tabuleiro[1][0] = jogador1;
-			return true;
-		}
-		if (tabuleiro[0][2] == jogador2 && tabuleiro[2][0] == jogador2){
-			tabuleiro[2][1] = jogador1;
-			return true;
-		}
-		if (tabuleiro[2][2] == 0 && tabuleiro[0][2] == jogador2 && tabuleiro[2][1] == jogador2){//ok
-			tabuleiro[2][2] = jogador1;
-			return true;
-		}
-		if (tabuleiro[0][2] == 0 && tabuleiro[0][0] == jogador2 && tabuleiro[1][2] == jogador2){//ok
-			tabuleiro[0][2] = jogador1;
-			return true;
-		}
-		if (tabuleiro[0][0] == 0 && tabuleiro[2][0] == jogador2 && tabuleiro[0][1] == jogador2){//ok
-			tabuleiro[0][0] = jogador1;
-			return true;
-		}
-		if (tabuleiro[2][0] == 0 && tabuleiro[2][2] == jogador2 && tabuleiro[1][0] == jogador2){//ok
-			tabuleiro[2][0] = jogador1;
-			return true;
-		}
-		if (tabuleiro[0][2] == 0 && tabuleiro[2][2] == jogador2 && tabuleiro[0][1] == jogador2){//ok
-			tabuleiro[0][2] = jogador1;
-			return true;
-		}
-		if (tabuleiro[2][0] == 0 && tabuleiro[0][0] == jogador2 && tabuleiro[2][1] == jogador2){//ok
-			tabuleiro[2][0] = jogador1;
-			return true;
-		}
-		if (tabuleiro[0][0] == 0 && tabuleiro[0][2] == jogador2 && tabuleiro[1][0] == jogador2){//ok
-			tabuleiro[0][0] = jogador1;
-			return true;
-		}
-		if (tabuleiro[2][2] == 0 && tabuleiro[2][0] == jogador2 && tabuleiro[1][2] == jogador2){//ok
-			tabuleiro[2][2] = jogador1;
-			return true;
-		}
 		return false;
 	}
 
@@ -485,29 +454,20 @@ public class UtilMac {
 				}
 			} else if (pos == 4) {
 				if (tabuleiro[2][1] == 0) {
-					tabuleiro[2][1] = jogador;
+					tabuleiro[2][2] = jogador;
 					p = true;
 				}
 			}
 		} while (p == false);
 	}
 
-	
-	
 	@Override
 	public String toString() {
-		return "UtilMac [jogador1=" + jogador1 + ", jogador2=" + jogador2 + ", empate=" + empate + "]";
-	}
 
-	public static void main(String[] args){
-		boolean vezJogador = true;
-		
-		for(int i = 0; i < 1000 ; i++){
-			UtilMac util = new UtilMac(vezJogador);
-			while(util.jogadas < 9 || util.vencedor != -1){
-				util.jogada();
-			}
-			System.out.println(util.toString());
-		}
+		return "|" + tabuleiro[0][0] + "|" + tabuleiro[0][1] + "|"
+				+ tabuleiro[0][2] + "|\n|" + tabuleiro[1][0] + "|"
+				+ tabuleiro[1][1] + "|" + tabuleiro[1][2] + "|\n|"
+				+ tabuleiro[2][0] + "|" + tabuleiro[2][1] + "|"
+				+ tabuleiro[2][2] + "|\n";
 	}
 }

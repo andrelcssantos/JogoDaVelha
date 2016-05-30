@@ -215,7 +215,6 @@ public class UtilUnstoppable {
 			tabuleiro[2][2] = 2;
 			return true;
 		}
-
 		if (tabuleiro[1][1] == 2 && tabuleiro[2][2] == 2 && tabuleiro[0][0] == 0) {
 			tabuleiro[0][0] = 2;
 			return true;
@@ -243,7 +242,7 @@ public class UtilUnstoppable {
 		return false;
 	}
 		
-	private boolean bloqueia() {
+	private boolean bloqueia() { //34
 
 		if (tabuleiro[0][0] == 0 && tabuleiro[0][1] == 1 && tabuleiro[0][2] == 1) {
 			tabuleiro[0][0] = 2;
